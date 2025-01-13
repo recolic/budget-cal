@@ -2,21 +2,7 @@
 
 recolic自用的记账工具
 
-## Installation / Deployment
-
-1. Download all files into any PHP-enabled HTTP server.
-2. `chmod 777 -R YOUR_SERVER_DIR`
-3. (Optional) Create an 'Spec Budget' excel on Google Drive or OneDrive and share to everyone, and put link into `spec_url.txt`.
-4. Enjoy.
-
-## 安装方法
-
-1. 把所有文件下载到一个有PHP的HTTP服务器。
-2. `chmod 777 -R [你的HTTP文件夹]`
-3. (可选) 创建一个 '意外支出' 的excel文档在Google Drive或OneDrive里面，分享给匿名用户，并将连结放进`spec_url.txt`。
-4. 使用它。
-
-## How does it work
+## How does it work | 如何使用
 
 认识数位版账本前, 首先你要了解它的前身, 手写budget tracking是如何work的.
 
@@ -77,3 +63,16 @@ Amazon下单后亦存在完全退款之可能，然下单时开支数目已于�
 
 这是因为现金等价物之实际价值难以评估，甚至可能并非来自现金购买。而我们只对现金开销之管控感兴趣。若将现金等价物视为现金，则会导致重复记录开销（想想存款准备金率如何影响货币总量）。
 
+## Installation / Deployment
+
+1. Download all files into any PHP-enabled HTTP server.
+2. `chmod 777 -R YOUR_SERVER_DIR`
+3. (Optional) Create an 'Spec Budget' excel on Google Drive or OneDrive and share to everyone, and put link into `spec_url.txt`.
+4. Enjoy.
+
+## 安装方法
+
+1. 把所有文件下载到一个有PHP的HTTP服务器。
+2. `chmod 777 -R [你的HTTP文件夹]`
+3. (可选) 创建一个 '意外支出' 的excel文档在Google Drive或OneDrive里面，分享给匿名用户，并将连结放进`spec_url.txt`。
+4. 使用它。
