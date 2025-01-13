@@ -2,6 +2,8 @@
 
 recolic自用的简单php/web记账工具
 
+![](archived/screenshot.png)
+
 ## How does it work | 如何使用
 
 认识数位版账本前, 首先你要了解它的前身, 手写budget tracking是如何work的.
