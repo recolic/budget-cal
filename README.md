@@ -1,6 +1,6 @@
-# recolic's budget tracking tool
+# simple html/php budget tracking tool
 
-recolic自用的记账工具
+recolic自用的简单php/web记账工具
 
 ## How does it work | 如何使用
 
