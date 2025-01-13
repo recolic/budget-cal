@@ -18,7 +18,7 @@ recolic自用的记账工具
 
 认识数位版账本前, 首先你要了解它的前身, 手写budget tracking是如何work的.
 
-![](./NextDocument.jpg) ![](../NextDocument.jpg)
+![](archived/NextDocument.jpg)
 
 - 如何记账
 
