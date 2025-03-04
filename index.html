@@ -53,7 +53,13 @@
 
     <script src="calendarorganizer.js"></script>
     <script>
-        const date_today = new Date().toISOString().split('T')[0]; // YYYY-mm-dd
+        function getLocalDateString() {
+            // Returns YYYY-mm-dd
+            // Simply `new Date().toISOString().split('T')[0]` doesn't work, because toISOString is in UTC.
+            const d = new Date();
+            return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        }
+        const date_today = getLocalDateString();
 
         // document.getElementById('submit-form').addEventListener('submit', 
         function submitNewCostForm() {

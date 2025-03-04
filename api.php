@@ -179,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Handle render page request
     $results = renderPage();
     foreach ($results as $date) {
-        echo "Budget used on: $date\n";
+        echo "X:$date\n";
     }
 } else {
     echo "Invalid request method\n";
