@@ -57,13 +57,18 @@ recolic自用的简单php/web记账工具
 举例：Walmart已下单预付款，然配送时可能根据实际货品重量、缺货情况进行部分价格调整。此情况下应待配送完成后（即开支之数目确定后）将所确定之数目入账。  
 Amazon下单后亦存在完全退款之可能，然下单时开支数目已于合理标准内几近确定，故可作为入账之根据。
 
-- corner case: 现金等价物
+- corner case: 现金等价物和点数
 
-例如你可能消费了航空里程、信用卡点数、信用卡福利、商户credit，你消费的并不是现金，虽然这些等价物是曾经用现金购买的。
+什么是本节定义的现金等价物?
+1. It must have a deterministic corresponding ratio to cash even if not allowed to be converted into cash.
+2. Spending such points/credits at that ratio does not lead to an obviously sub-optimal decision. (Example: if you have to buy from some overpriced provider)
+3. Spending such points/credits within its valid period does not lead to an obviously sub-optimal decision. (Example: You don't want icecream but points expiring in 1 day)
 
-我们只在支付现金（以获取这些等价物）时记录一次开销，而消费这些现金等价物时不再另行记录。
+面对航空里程、信用卡点数、信用卡福利、商户credit等多种货币，应判定其是否符合上述"现金等价物"定义，而现金价值依上述定义确定。
 
-这是因为现金等价物之实际价值难以评估，甚至可能并非来自现金购买。而我们只对现金开销之管控感兴趣。若将现金等价物视为现金，则会导致重复记录开销（想想存款准备金率如何影响货币总量）。
+在支付(额外)现金换取现金等价物时，所消耗之(额外)现金不被视为开销，因为你换得了现金。
+
+在支付(额外)现金换取其他普通点数时，所消耗之(额外)现金应当视为开销，因为你换得了商品。
 
 ## Installation / Deployment
 
