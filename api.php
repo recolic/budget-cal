@@ -1,7 +1,6 @@
 <?php
-// Please modify me before use.
-require_once $_SERVER['DOCUMENT_ROOT'] . "/rsec.php";
-$m_prefix = "$rlib_data_prefix/budget-1"; // Directory must allow write. Try chmod 777
+// This is data dir. Must `chmod 777` to allow write access.
+$m_prefix = "."; // to use current dir
 
 function newCost($date, $cost) {
     global $m_prefix;
