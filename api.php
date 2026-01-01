@@ -1,20 +1,26 @@
 <?php
+// Please modify me before use.
+require_once $_SERVER['DOCUMENT_ROOT'] . "/rsec.php";
+$m_prefix = "$rlib_data_prefix/budget-1"; // Directory must allow write. Try chmod 777
 
 function newCost($date, $cost) {
-    $file = 'costs.txt';
+    global $m_prefix;
+    $file = "$m_prefix/costs.txt";
     $data = "$date,$cost\n";
     file_put_contents($file, $data, FILE_APPEND);
 }
 
 function newBudgetInfo($startDate, $budgetPerDay) {
-    $file = 'budget_info.txt';
+    global $m_prefix;
+    $file = "$m_prefix/budget_info.txt";
     $data = "$startDate,$budgetPerDay\n";
     file_put_contents($file, $data, FILE_APPEND);
 }
 
 function queryCurrentBudget($todayDate) {
+    global $m_prefix;
     // Read and parse the file
-    $filename = 'budget_info.txt';
+    $filename = "$m_prefix/budget_info.txt";
     $lines = file($filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     $budgets = array_map('str_getcsv', $lines);
 
@@ -35,8 +41,9 @@ function queryCurrentBudget($todayDate) {
 }
 
 function renderPage() {
-    $costsFile = 'costs.txt';
-    $budgetFile = 'budget_info.txt';
+    global $m_prefix;
+    $costsFile = "$m_prefix/costs.txt";
+    $budgetFile = "$m_prefix/budget_info.txt";
 
     if (!file_exists($costsFile) || !file_exists($budgetFile)) {
         return [];
@@ -165,11 +172,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $res = queryCurrentBudget($date);
         echo "$res";
     } elseif (isset($_POST['query_spec_url'])) {
-        $res = file_get_contents("spec_url.txt");
+        $res = file_get_contents("$m_prefix/spec_url.txt");
         if ($res === false) {echo "read spec_url.txt failed";http_response_code(500);}
         else {echo "$res";}
     } elseif (isset($_POST['query_latest_tx'])) {
-        $lines = file("costs.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $lines = file("$m_prefix/costs.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         $lastLines = array_slice($lines, -4);
         foreach (array_reverse($lastLines) as $line) {  echo $line . PHP_EOL;  }
     } else {
