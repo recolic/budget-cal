@@ -70,6 +70,8 @@ Amazon下单后亦存在完全退款之可能，然下单时开支数目已于�
 
 在支付(额外)现金换取其他普通点数时，所消耗之(额外)现金应当视为开销，因为你换得了商品。
 
+> 举例: 若你用2550USD购买1oz金币。因实体黄金具有与现金长期、确定、不受限之兑换关系，故金币属于现金等价物。其当前市场价为2500USD(spot)，因此你应立即记录开销50USD。
+
 ## Installation / Deployment
 
 1. Download all files into any PHP-enabled HTTP server.
